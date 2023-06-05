@@ -39,7 +39,7 @@ public class ClubController {
     @PostMapping("/clubs/new")
     public String saveClub(@ModelAttribute("club") Club club) {
         clubService.saveClub(club);
-        return "redirect/clubs";
+        return "redirect:/clubs";
     }
 
     @GetMapping("/clubs/{clubId}/edit")
