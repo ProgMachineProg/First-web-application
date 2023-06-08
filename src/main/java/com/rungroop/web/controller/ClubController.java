@@ -3,7 +3,7 @@ package com.rungroop.web.controller;
 import com.rungroop.web.Service.ClubService;
 import com.rungroop.web.dto.ClubDto;
 import com.rungroop.web.models.Club;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,7 +49,7 @@ public class ClubController {
     }
 
     @GetMapping("/clubs/{clubId}/edit")
-    public String editClubForm(@PathVariable("clubId") long clubId, Model model) {
+    public String editClubForm(@PathVariable("clubId") Long clubId, Model model) {
         ClubDto club = clubService.findClubById(clubId);
         model.addAttribute("club", club);
         return "clubs-edit";

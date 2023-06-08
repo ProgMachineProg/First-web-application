@@ -1,5 +1,5 @@
 package com.rungroop.web.models;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public class Club {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String title;
     private String photoUrl;
     private String content;
