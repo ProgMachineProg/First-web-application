@@ -5,19 +5,23 @@ import com.rungroop.web.dto.ClubDto;
 import com.rungroop.web.models.Club;
 import com.rungroop.web.repository.ClubRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ClubSeviceImlp implements ClubService {
+public class ClubServiceImpl implements ClubService {
     private ClubRepository clubRepository;
 
     @Autowired
-    public ClubSeviceImlp(ClubRepository clubRepository) {
+    public ClubServiceImpl(ClubRepository clubRepository) {
         this.clubRepository = clubRepository;
+    }
+
+    @Override
+    public void delete(long clubId) {
+        clubRepository.deleteById(clubId);
     }
 
     @Override
